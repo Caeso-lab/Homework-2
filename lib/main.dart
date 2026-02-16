@@ -115,9 +115,9 @@ class MyApp extends StatelessWidget {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.all(20.0),
                     child: Text('Activity', style: TextStyle(
-                      fontSize: 14, color: Colors.blueAccent
+                      fontSize: 0.04*width, color: Colors.blueAccent
                     ),),
                   ),
                   SizedBox(width: 0.01*width),
