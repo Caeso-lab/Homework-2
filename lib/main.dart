@@ -5,16 +5,18 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ProfileScreen(),
+      home: HomeScreen(),
     );
   }
 }
 
-class ProfileScreen extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,12 +38,24 @@ class ProfileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(Icons.menu),
-                    Text(
-                      "Profile",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue,
+
+
+                    ElevatedButton(
+
+                      onPressed: () {
+                        // Navigator.pop(context,
+                        // MaterialPageRoute(builder: (context) => const ProfileScreen(),),
+                        // );
+                      } ,
+
+
+                      child: Text(
+                        "Profile",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                        ),
                       ),
                     ),
                   ],
