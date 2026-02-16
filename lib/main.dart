@@ -7,12 +7,17 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Second Page(Profiles)',
+    
       home: Scaffold(
         body: SingleChildScrollView(
           child: Column(
@@ -24,11 +29,11 @@ class MyApp extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(16.0),
-                      child: Icon(Icons.arrow_back, color: Colors.black, size: 40,),
+                      child: Icon(Icons.arrow_back, color: Colors.black, size: 0.1*width,),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(16.0),
-                      child: Icon(Icons.settings, color: Colors.black, size: 40,),
+                      child: Icon(Icons.settings, color: Colors.black, size: 0.1*width,),
                     ),
                   ],
                 ),
@@ -39,34 +44,35 @@ class MyApp extends StatelessWidget {
                   Column(
                     children: [
                       Icon(Icons.account_circle_rounded,
-                      size: 200,),
+                      size: 0.4*width,),
                       ElevatedButton(onPressed: () =>{} , 
                       child: Row(
                         children: [
                           Text('Edit profile', style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),),
-                          SizedBox(width:10 ,),
-                          Icon(Icons.edit),
+                            fontSize: 0.03*width, fontWeight: FontWeight.bold),),
+                          SizedBox(width:0.015*width ,),
+                          Icon(Icons.edit,),
                         ],
                       ),
+                      
                       )
                     ],
                   ),
-                  SizedBox(width: 20,),
+                  SizedBox(width: 0.02*width,),
                   Column(
                     children: [
                       Column(
                         children: [
                           Text('Profile name', style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold
+                            fontSize: 0.05*width, fontWeight: FontWeight.bold
                           ),),
                           Text('Smaller bio', style: TextStyle(
-                            color: Colors.blueAccent, fontSize: 16
+                            color: Colors.blueAccent, fontSize: 0.04*width,
                           ),)
                         ],
                       ),
                       SizedBox(
-                        height: 40,
+                        height: 0.04*height,
                       ),
           
                       Row(
@@ -75,27 +81,27 @@ class MyApp extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text('Friends', style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black
+                                fontSize: 0.05*width, fontWeight: FontWeight.bold, color: Colors.black
                               ),),
                               Text('136', style: TextStyle(
-                                color: Colors.blueAccent, fontSize: 16, 
+                                color: Colors.blueAccent, fontSize: 0.04*width, 
                               ),),
                             ],
                           ),
-                          SizedBox(width: 20,),
+                          SizedBox(width: 0.02*width,),
                           Container(
                             color: Colors.blue,
                             width: 2,
-                            height: 30,
+                            height: 0.03*height,
           
                           ),
-                          SizedBox(width: 20,),
+                          SizedBox(width: 0.02*width,),
                           Column(
                             children: [
                               Text('Following',style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black)),
+                                fontSize: 0.05*width, fontWeight: FontWeight.bold, color: Colors.black)),
                               Text('136', style: TextStyle(
-                                color: Colors.blueAccent, fontSize: 16,)),
+                                color: Colors.blueAccent, fontSize: 0.04*width,)),
                             ],
                           ),
                         ],
@@ -105,7 +111,7 @@ class MyApp extends StatelessWidget {
                 ],
               ),
           
-              SizedBox(height: 30),
+              SizedBox(height: 0.03*height),
               Row(
                 children: [
                   Padding(
@@ -114,60 +120,64 @@ class MyApp extends StatelessWidget {
                       fontSize: 14, color: Colors.blueAccent
                     ),),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: 0.01*width),
                   Icon(Icons.trending_up, color: Colors.deepPurple),
                 ],
               ),
           
               Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ElevatedButton(onPressed: ()=>{},
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Row(
-                        children: [
-                          Icon(Icons.image),
-                          Text('Images', style: TextStyle(color: Colors.white, 
-                          fontSize: 16, fontWeight: FontWeight.bold),)
-                        ],
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton(onPressed: ()=>{},
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Row(
+                          children: [
+                            Icon(Icons.image),
+                            Text('Images', style: TextStyle(color: Colors.black, 
+                            fontSize: 16, fontWeight: FontWeight.bold),)
+                          ],
+                        ),
                       ),
-                    ),
-                    ),
-                    ElevatedButton(onPressed: ()=>{},
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Row(
-                        children: [
-                          Icon(Icons.play_circle_outline_outlined),
-                          Text('Videos', style: TextStyle(color: Colors.black, 
-                          fontSize: 16, fontWeight: FontWeight.bold),)
-                        ],
                       ),
-                    ),
-                    ),
-                    ElevatedButton(onPressed: ()=>{},
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Row(
-                        children: [
-                          Icon(Icons.favorite_border),
-                          Text('Liked', style: TextStyle(color: Colors.black, 
-                          fontSize: 16, fontWeight: FontWeight.bold),)
-                        ],
+                      ElevatedButton(onPressed: ()=>{},
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Row(
+                          children: [
+                            Icon(Icons.play_circle_outline_outlined),
+                            Text('Videos', style: TextStyle(color: Colors.black, 
+                            fontSize: 16, fontWeight: FontWeight.bold),)
+                          ],
+                        ),
                       ),
-                    ),
-                    ),
-                  ],
+                      ),
+                      ElevatedButton(onPressed: ()=>{},
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Row(
+                          children: [
+                            Icon(Icons.favorite_border),
+                            Text('Liked', style: TextStyle(color: Colors.black, 
+                            fontSize: 16, fontWeight: FontWeight.bold),)
+                          ],
+                        ),
+                      ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 0.01*height,),
               
               Center(
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
                           margin: EdgeInsets.all(12),
@@ -175,8 +185,8 @@ class MyApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8.0),
                             color: Colors.grey[350]
                           ),
-                          height: 150,
-                          width: 150,
+                          height: 0.27*width,
+                          width: 0.27*width,
                         ),
                         Container(
                           margin: EdgeInsets.all(12),
@@ -184,8 +194,8 @@ class MyApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8.0),
                             color: Colors.grey[350]
                           ),
-                          height: 150,
-                          width: 150,
+                          height: 0.27*width,
+                          width: 0.27*width,
                         ),
                         Container(
                           margin: EdgeInsets.all(12),
@@ -193,12 +203,13 @@ class MyApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8.0),
                             color: Colors.grey[350]
                           ),
-                          height: 150,
-                          width: 150,
+                          height: 0.27*width,
+                          width: 0.27*width,
                         ),
                       ],
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
                           margin: EdgeInsets.all(12),
@@ -206,8 +217,8 @@ class MyApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8.0),
                             color: Colors.grey[350]
                           ),
-                          height: 150,
-                          width: 150,
+                          height: 0.27*width,
+                          width: 0.27*width,
                         ),
                         Container(
                           margin: EdgeInsets.all(12),
@@ -215,8 +226,8 @@ class MyApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8.0),
                             color: Colors.grey[350]
                           ),
-                          height: 150,
-                          width: 150,
+                          height: 0.27*width,
+                          width: 0.27*width,
                         ),
                         Container(
                           margin: EdgeInsets.all(12),
@@ -224,12 +235,13 @@ class MyApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8.0),
                             color: Colors.grey[350]
                           ),
-                          height: 150,
-                          width: 150,
+                          height: 0.27*width,
+                          width: 0.27*width,
                         ),
                       ],
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
                           margin: EdgeInsets.all(12),
@@ -237,8 +249,8 @@ class MyApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8.0),
                             color: Colors.grey[350]
                           ),
-                          height: 150,
-                          width: 150,
+                          height: 0.27*width,
+                          width: 0.27*width,
                         ),
                         Container(
                           margin: EdgeInsets.all(12),
@@ -246,8 +258,8 @@ class MyApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8.0),
                             color: Colors.grey[350]
                           ),
-                          height: 150,
-                          width: 150,
+                          height: 0.27*width,
+                          width: 0.27*width,
                         ),
                         Container(
                           margin: EdgeInsets.all(12),
@@ -255,8 +267,8 @@ class MyApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8.0),
                             color: Colors.grey[350]
                           ),
-                          height: 150,
-                          width: 150,
+                          height: 0.27*width,
+                          width: 0.27*width,
                         ),
                       ],
                     ),
