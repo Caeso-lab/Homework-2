@@ -1,25 +1,33 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const SecondScreen());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
 
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // final width = MediaQuery.of(context).size.width;
-    // final height = MediaQuery.of(context).size.height;
-
+   
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Second Page(Profiles)',
     
-      home: Scaffold(
-        body: SingleChildScrollView(
+      home: ProfileScreen(),
+    );
+  }
+}
+
+
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
 
           child: SafeArea(
             child: Center(
@@ -287,7 +295,6 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-      ),
     );
   }
 }
